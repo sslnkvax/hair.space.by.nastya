@@ -11,15 +11,19 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Balsamiq Sans', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: white;
+      background-image: url("images/1.jpg"); /* Единый фон для всего сайта */
+      background-size: cover; /* Растягиваем изображение */
+      background-position: center; /* Центрируем */
+      background-attachment: fixed; /* Фон фиксируется при прокрутке */
+      background-repeat: no-repeat; /* Отключаем повторение */
       color: var(--text-color);
     }
 
+
     header {
-      background-color: white;
       padding: 50px 0;
       display: flex;
       justify-content: center;
@@ -33,15 +37,16 @@
     }
 
     main {
-      margin-top: 30px;
+      margin-top: 0px;
     }
 
     section {
       display: flex;
       align-items: center;
-      padding: 50px 20px;
-      gap: 20px;
-      min-height: 300px;
+      padding: 0px 0px;
+      gap: 10px 20px;
+      min-height: 0px;
+      padding: 50px 50px;
     }
 
     .image-left {
@@ -73,17 +78,20 @@
       font-size: 36px;
       margin-bottom: 10px;
       color: var(--main-color);
+      font-weight: 400;
     }
 
     section p {
       font-size: 22px;
       line-height: 1.5;
       margin-bottom: 10px;
+      font-weight: 400;
+      color: white
     }
 
     button.show-form {
       position: fixed;
-      bottom: 80px;
+      bottom: 20px; /* Начальный отступ от нижнего края окна */
       left: 50%;
       transform: translateX(-50%);
       background-color: var(--main-color);
@@ -93,7 +101,7 @@
       cursor: pointer;
       font-size: 18px;
       border-radius: 8px;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s, bottom 0.3s; /* Плавный переход */
       z-index: 1000;
       opacity: 0.7;
     }
@@ -102,6 +110,7 @@
       background-color: #e65c7b;
       opacity: 1;
     }
+
 
     .form-container {
       display: none;
@@ -149,13 +158,23 @@
     }
 
     footer {
-      background-color: var(--text-color);
+      background-color: black(--text-color);
       color: white;
       padding: 10px;
       text-align: center;
     }
+
+    footer a {
+      color: #ff6f91;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400&display=swap" rel="stylesheet">
 <body>
   <header>
     <img src="logo.svg" alt="Hair Space by Nastya">
@@ -255,6 +274,7 @@
         padding: 20px;
         width: 45%; /* Поддержка двух колонок */
         max-width: 400px;
+        opacity: 0.6;
       }
     
       .price-table h2 {
@@ -298,14 +318,14 @@
   </div>
 
   <!-- Кнопка для открытия формы -->
-  <button class="show-form" onclick="toggleForm()">Записатися</button>
+  <button class="show-form" id="bookingButton" onclick="toggleForm()">Записатися</button>
 
   <footer>
-    <p>Телефон: +380931392713</p>
-    <p>Email: hair.space.by.nastya@gmail.com</p>
-    <p>Соціальні мережі: https://www.instagram.com/_nastyaa__aa</p>
-    <p></p>
-    <p>&copy; 2024 Hair Space by Nastya</p>
+    <p>Телефон: <a href="tel:+380931392713">+380931392713</a></p>
+    <p>Email: <a href="mailto:hair.space.by.nastya@gmail.com">hair.space.by.nastya@gmail.com</a></p>
+    <p>Соціальні мережі: <a href="https://www.instagram.com/_nastyaa__aa" target="_blank">Instagram</a></p>
+    <p>Адреса: <a href="https://maps.app.goo.gl/xTmUpNaqAXvfvgiz9">Чернігів, вул. Олега Міхнюка 41</a></p>
+    <p>&copy; 2025 Hair Space by Nastya</p>
   </footer>
 
   <script>
@@ -318,6 +338,23 @@
         formContainer.style.display = 'none';
       }
     }
+
+    document.addEventListener("scroll", function () {
+      const button = document.getElementById("bookingButton");
+      const footer = document.querySelector("footer");
+
+      const footerTop = footer.getBoundingClientRect().top; // Верхняя часть футера
+      const viewportHeight = window.innerHeight; // Высота области просмотра
+
+      if (footerTop < viewportHeight) {
+    // Если футер попадает в область видимости
+      button.style.bottom = `${viewportHeight - footerTop + 20}px`; // Останавливаем кнопку за 20px до футера
+      } else {
+      button.style.bottom = "20px"; // Обычное фиксированное положение
+      }
+    });
+
+
   </script>
 </body>
 </html>
