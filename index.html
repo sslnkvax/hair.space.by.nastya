@@ -196,6 +196,49 @@
         display: block; /* Оставить только первый абзац */
       }
 
+    /* Устройства с шириной экрана до 768px */
+    @media screen and (max-width: 768px) {
+      body {
+        font-size: 14px; /* Уменьшение размера текста */
+      }
+
+      .price-tables {
+        flex-direction: column;
+      }
+
+      .price-table {
+        width: 90%;
+      }
+    }
+
+    /* Устройства с шириной экрана от 768px до 1024px */
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      body {
+        font-size: 16px; /* Увеличение текста для планшетов */
+    }
+
+     .price-tables {
+      flex-direction: row; /* Горизонтальное расположение */
+         gap: 10px;
+      }
+
+    .price-table {
+      width: 45%;
+    }
+    }
+
+    /* Высота экрана до 600px (например, для ландшафтных смартфонов) */
+  @media screen and (max-height: 600px) {
+    header {
+      padding: 20px 0; /* Уменьшение отступов */
+    }
+
+    .price-tables {
+      flex-direction: column;
+    }
+  } 
+
+
   </style>
 </head>
 <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400&display=swap" rel="stylesheet">
