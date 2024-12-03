@@ -173,6 +173,23 @@
     footer a:hover {
       text-decoration: underline;
     }
+    
+    @media screen and (min-width: 375px) and (max-width: 430px) and (-webkit-device-pixel-ratio: 3) {
+    /* Стили для iPhone X - iPhone 16 */
+      .price-table {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+      .price-tables {
+        flex-direction: column; /* Элементы располагаются вертикально */
+      }
+
+      header img {
+        width: 60%; /* Увеличение логотипа */
+      }
+    }
+
 
     @media screen and (max-width: 768px) {
       header img {
