@@ -6,85 +6,197 @@
   <title>Hair Space by Nastya</title>
   <style>
     :root {
-      --main-color: #ff6f91; /* Основной цвет */
+      --main-color: #ff6f91; /* Акцентный цвет */
       --text-color: #333; /* Цвет текста */
+      --background-color: #f9f9f9; /* Фоновый цвет */
+      --footer-bg: #222; /* Цвет фона подвала */
     }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      text-align: center;
-      background-color: white;
+      background-color: var(--background-color);
       color: var(--text-color);
     }
+
     header {
-      background-color: white;
-      padding: 50px 0;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
+      padding: 15px 20px;
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    header img {
-      width: 45%;
-      max-width: 900px; /* Увеличенный размер для ПК */
-      height: auto;
+
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
     }
+
+    header nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    header nav a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-size: 14px;
+      padding: 5px 10px;
+    }
+
     main {
-      margin-top: 30px;
+      padding: 20px;
     }
-    footer {
-      background-color: var(--text-color);
-      color: white;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
+
+    main h1 {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
     }
+
+    .service-list {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .service-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .service-item:last-child {
+      border-bottom: none;
+    }
+
+    .service-item span {
+      font-size: 16px;
+    }
+
     .form-container {
-      display: none;
-      margin-top: 20px;
+      max-width: 400px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
-    button {
+
+    .form-container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 15px;
       background-color: var(--main-color);
       color: white;
       border: none;
-      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 5px;
       cursor: pointer;
-      font-size: 18px;
-      border-radius: 8px;
       transition: background-color 0.3s;
     }
-    button:hover {
+
+    .form-container button:hover {
       background-color: #e65c7b;
     }
-    @media (max-width: 768px) {
-      header img {
-        width: 70%;
-        height: auto;
-      }
+
+    .cta-button {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 40px);
+      max-width: 400px;
+      padding: 15px;
+      background-color: var(--main-color);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #e65c7b;
+    }
+
+    footer {
+      background-color: var(--footer-bg);
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: white;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.svg" alt="Hair Space by Nastya">
+    <div class="logo">Hair Space</div>
+    <nav>
+      <a href="#">UK</a>
+      <a href="#">EN</a>
+    </nav>
   </header>
+
   <main>
-    <button onclick="showForm()">Записатися на послугу</button>
-    <div class="form-container" id="formContainer">
-      <iframe src="https://forms.gle/EVVG7BYPh2jLcU6J9" style="width: 80%; height: 500px; border: none;"></iframe>
+    <h1>Ціни на послуги</h1>
+    <div class="service-list">
+      <div class="service-item">
+        <span>Зняття нарощеного волосся</span>
+        <span>2 000 ₴</span>
+      </div>
+      <div class="service-item">
+        <span>Стрижка</span>
+        <span>1 200 ₴</span>
+      </div>
+      <div class="service-item">
+        <span>Фарбування</span>
+        <span>3 500 ₴</span>
+      </div>
     </div>
   </main>
+
+  <button class="cta-button">Записатись</button>
+
   <footer>
     <p>&copy; 2024 Hair Space by Nastya. Всі права захищено.</p>
+    <a href="#">Політика конфіденційності</a>
+    <a href="#">Cookies</a>
   </footer>
-
-  <script>
-    function showForm() {
-      const formContainer = document.getElementById('formContainer');
-      formContainer.style.display = 'block';
-    }
-  </script>
 </body>
 </html>
 
