@@ -5,61 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hair Space by Nastya</title>
   <style>
+    :root {
+      --main-color: #ff6f91; /* Основной цвет */
+      --text-color: #333; /* Цвет текста */
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       text-align: center;
-      background-color: #ffffff;
+      background-color: white;
+      color: var(--text-color);
     }
-
     header {
-      margin-top: 20px;
+      background-color: white;
+      padding: 50px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-
-    .logo {
-      max-width: 50%; /* Для ПК */
+    header img {
+      width: 100%;
+      max-width: 900px; /* Увеличенный размер для ПК */
       height: auto;
     }
-
-    .button {
-      background-color: #f48fb1;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      font-size: 18px;
-      border-radius: 5px;
-      margin-top: 20px;
-      cursor: pointer;
+    main {
+      margin-top: 30px;
     }
-
-    .button:hover {
-      background-color: #ec407a;
-    }
-
     footer {
-      background-color: #333;
+      background-color: var(--text-color);
       color: white;
       padding: 10px;
       position: fixed;
       bottom: 0;
       width: 100%;
     }
-
+    .form-container {
+      display: none;
+      margin-top: 20px;
+    }
+    button {
+      background-color: var(--main-color);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #e65c7b;
+    }
     @media (max-width: 768px) {
-      .logo {
-        max-width: 80%; /* Для мобильных устройств */
+      header img {
+        width: 100%; /* Логотип займет всю ширину экрана */
+        height: auto;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Hair Space by Nastya" class="logo">
+    <img src="logo.png" alt="Hair Space by Nastya">
   </header>
   <main>
-    <button class="button" onclick="showForm()">Записатися на послугу</button>
-    <iframe id="form" src="https://forms.gle/EVVG7BYPh2jLcU6J9" style="width: 80%; height: 500px; border: none; display: none; margin-top: 20px;"></iframe>
+    <button onclick="showForm()">Записатися на послугу</button>
+    <div class="form-container" id="formContainer">
+      <iframe src="https://forms.gle/EVVG7BYPh2jLcU6J9" style="width: 80%; height: 500px; border: none;"></iframe>
+    </div>
   </main>
   <footer>
     <p>&copy; 2024 Hair Space by Nastya. Всі права захищено.</p>
@@ -67,7 +81,8 @@
 
   <script>
     function showForm() {
-      document.getElementById("form").style.display = "block";
+      const formContainer = document.getElementById('formContainer');
+      formContainer.style.display = 'block';
     }
   </script>
 </body>
