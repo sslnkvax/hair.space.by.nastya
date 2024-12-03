@@ -183,11 +183,23 @@
         max-width: 100%; /* Картинки занимают всю ширину */
       }
 
-      .price-tables { 
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
+      .price-tables {
+        display: flex; /* Включаем флексбокс */
+        flex-direction: row; /* Горизонтальное расположение (рядом) */
+        gap: 20px; /* Отступы между таблицами */
+        justify-content: center; /* Центрирование таблиц в контейнере */
+        flex-wrap: wrap; /* Позволяет переноситься на следующий ряд, если не помещаются */
       }
+
+
+      .price-table {
+        width: 45%; /* Устанавливаем ширину, чтобы таблицы помещались рядом */
+        max-width: 400px; /* Ограничиваем максимальную ширину */
+        min-width: 300px; /* Минимальная ширина */
+        flex-grow: 1; /* Позволяет элементу заполнять оставшееся пространство */
+      }
+
+
 
 
     /* Устройства с шириной экрана до 768px */
@@ -222,16 +234,10 @@
     }
 
     /* Высота экрана до 600px (например, для ландшафтных смартфонов) */
-  @media screen and (max-height: 600px) {
+    @media screen and (max-height: 600px) {
     header {
       padding: 20px 0; /* Уменьшение отступов */
-    }
-
-    .price-tables {
-      flex-direction: column;
-    }
-  } 
-
+    } 
 
   </style>
 </head>
