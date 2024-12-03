@@ -172,6 +172,28 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    @media screen and (max-width: 768px) {
+      header img {
+        width: 60%; /* Ещё большее увеличение логотипа на мобильных устройствах */
+      }
+
+      section img {
+        max-width: 100%; /* Картинки занимают всю ширину */
+      }
+
+      .price-table {
+        width: 100%; /* Прайсы растягиваются на всю ширину */
+      }
+
+      section .text-container p {
+        display: none; /* Скрыть лишний текст на мобильной версии */
+      }
+
+      section .text-container p:first-child {
+        display: block; /* Оставить только первый абзац */
+      }
+
   </style>
 </head>
 <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400&display=swap" rel="stylesheet">
