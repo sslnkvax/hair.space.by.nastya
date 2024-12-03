@@ -126,6 +126,7 @@
       z-index: 1001;
       width: 90%;
       max-width: 400px;
+      opacity: 0.91;
     }
 
     .form-container form {
@@ -192,9 +193,14 @@
         margin-bottom: 20px; /* Добавляем отступ между таблицами */
       }
 
-      section .text-container p:first-child {
-        display: block; /* Оставить только первый абзац */
+      section .text-container p {
+        display: none; /* Скрыть все абзацы */
       }
+
+      section .text-container p:first-child {
+        display: block; /* Показать только первый абзац */
+      }
+
 
     /* Устройства с шириной экрана до 768px */
     @media screen and (max-width: 768px) {
@@ -379,13 +385,13 @@
   <div class="form-container" id="formContainer">
     <form action="/submit" method="POST">
       <input type="text" name="name" placeholder="Ваше ім'я" required>
-      <input type="tel" name="phone" placeholder="+380 00 000 00 00" required>
-      <button type="submit">Записатися</button>
+      <input type="tel" name="phone" placeholder="+380 00 000 0000" required>
+      <button type="submit">записатись</button>
     </form>
   </div>
 
   <!-- Кнопка для открытия формы -->
-  <button class="show-form" id="bookingButton" onclick="toggleForm()">Записатися</button>
+  <h2><button class="show-form" id="bookingButton" onclick="toggleForm()">запис</button></h2>
 
   <footer>
     <p>Телефон: <a href="tel:+380931392713">+380931392713</a></p>
