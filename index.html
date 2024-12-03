@@ -19,14 +19,14 @@
     }
     header {
       background-color: white;
-      padding: 50px 0; /* Увеличил отступы для логотипа */
+      padding: 50px 0;
       display: flex;
       justify-content: center;
       align-items: center;
     }
     header img {
       width: 100%;
-      max-width: 800px; /* Увеличение на ПК на 10% */
+      max-width: 880px; /* Размер для ПК */
       height: auto;
     }
     main {
@@ -41,7 +41,7 @@
       width: 100%;
     }
     .form-container {
-      display: none; /* Изначально скрываем форму */
+      display: none;
       margin-top: 20px;
     }
     button {
@@ -59,12 +59,9 @@
     }
     @media (max-width: 768px) {
       header img {
-        max-width: 780px; /* Увеличение на мобильных устройствах на 30% */
-      }
-    }
-    @media (min-width: 768px) {
-      header img {
-        max-width: 880px; /* Увеличение на ПК на 10% */
+        max-width: 100%; /* Логотип растягивается под ширину экрана */
+        height: auto;
+        margin: 20px; /* Отступы для красоты */
       }
     }
   </style>
