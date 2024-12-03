@@ -10,17 +10,15 @@
       margin: 0;
       padding: 0;
       text-align: center;
+      background-color: #ffffff; /* Белый фон */
     }
     header {
-      background-color: white;
+      background-color: #ffffff; /* Белый фон */
+      color: black; /* Черный текст */
       padding: 20px;
-    }
-    header img {
-      max-width: 100%;
-      height: auto;
     }
     main {
-      padding: 20px;
+      margin-top: 20px;
     }
     footer {
       background-color: #333;
@@ -30,19 +28,44 @@
       bottom: 0;
       width: 100%;
     }
+    .form-container {
+      display: none; /* Изначально скрываем форму */
+      margin-top: 20px;
+    }
+    button {
+      background-color: #4CAF50; /* Зеленая кнопка */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #45a049; /* Темнее при наведении */
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Hair Space by Nastya">
+    <img src="logo.png" alt="Hair Space by Nastya" style="max-width: 200px;">
   </header>
   <main>
-    <h2>Записатися на послугу</h2>
-    <iframe src="https://forms.gle/EVVG7BYPh2jLcU6J9" style="width: 80%; height: 500px; border: none;"></iframe>
+    <button onclick="showForm()">Записатися на послугу</button>
+    <div class="form-container" id="formContainer">
+      <iframe src="https://forms.gle/EVVG7BYPh2jLcU6J9" style="width: 80%; height: 500px; border: none;"></iframe>
+    </div>
   </main>
   <footer>
     <p>&copy; 2024 Hair Space by Nastya. Всі права захищено.</p>
   </footer>
+
+  <script>
+    function showForm() {
+      const formContainer = document.getElementById('formContainer');
+      formContainer.style.display = 'block'; // Показываем форму
+    }
+  </script>
 </body>
 </html>
 
