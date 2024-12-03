@@ -183,22 +183,15 @@
         max-width: 100%; /* Картинки занимают всю ширину */
       }
 
-      .price-tables {
-        flex-direction: column; /* Размещаем элементы друг под другом */
-        align-items: center; /* Центрируем их */
+      .price-tables { 
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
       }
 
       .price-table {
         width: 90%; /* Уменьшаем ширину для лучшего отображения на мобильных устройствах */
         margin-bottom: 20px; /* Добавляем отступ между таблицами */
-      }
-
-      section .text-container p {
-        display: none; /* Скрыть все абзацы */
-      }
-
-      section .text-container p:first-child {
-        display: block; /* Показать только первый абзац */
       }
 
 
