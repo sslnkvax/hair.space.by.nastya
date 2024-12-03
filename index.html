@@ -5,23 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hair Space by Nastya</title>
   <style>
+    :root {
+      --main-color: #ff6f91; /* Основной цвет: цвет логотипа */
+      --text-color: #333; /* Цвет текста */
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       text-align: center;
-      background-color: #ffffff; /* Белый фон */
+      background-color: white;
+      color: var(--text-color);
     }
     header {
-      background-color: #ffffff; /* Белый фон */
-      color: black; /* Черный текст */
+      background-color: white;
       padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    header img {
+      max-width: 100%;
+      height: auto;
+      max-height: 150px; /* Ограничение для мобильных устройств */
     }
     main {
       margin-top: 20px;
     }
     footer {
-      background-color: #333;
+      background-color: var(--text-color);
       color: white;
       padding: 10px;
       position: fixed;
@@ -33,22 +45,32 @@
       margin-top: 20px;
     }
     button {
-      background-color: #4CAF50; /* Зеленая кнопка */
+      background-color: var(--main-color); /* Используем основной цвет */
       color: white;
       border: none;
-      padding: 10px 20px;
+      padding: 15px 30px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 18px;
       border-radius: 5px;
+      transition: background-color 0.3s;
     }
     button:hover {
-      background-color: #45a049; /* Темнее при наведении */
+      background-color: #e65c7b; /* Чуть темнее при наведении */
+    }
+    @media (min-width: 768px) {
+      header img {
+        max-height: 200px; /* Логотип больше на ПК */
+      }
+      button {
+        font-size: 20px;
+        padding: 20px 40px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Hair Space by Nastya" style="max-width: 200px;">
+    <img src="logo.png" alt="Hair Space by Nastya">
   </header>
   <main>
     <button onclick="showForm()">Записатися на послугу</button>
