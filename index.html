@@ -6,7 +6,7 @@
   <title>Hair Space by Nastya</title>
   <style>
     :root {
-      --main-color: #ff6f91; /* Основной цвет: цвет логотипа */
+      --main-color: #ff6f91; /* Основной цвет */
       --text-color: #333; /* Цвет текста */
     }
     body {
@@ -19,15 +19,15 @@
     }
     header {
       background-color: white;
-      padding: 20px;
+      padding: 20px 0;
       display: flex;
       justify-content: center;
       align-items: center;
     }
     header img {
-      max-width: 100%;
+      width: 80%; /* Дефолтный размер для мобильных устройств */
+      max-width: 400px; /* Ограничение для крупных экранов */
       height: auto;
-      max-height: 150px; /* Ограничение для мобильных устройств */
     }
     main {
       margin-top: 20px;
@@ -45,7 +45,7 @@
       margin-top: 20px;
     }
     button {
-      background-color: var(--main-color); /* Используем основной цвет */
+      background-color: var(--main-color);
       color: white;
       border: none;
       padding: 15px 30px;
@@ -55,11 +55,12 @@
       transition: background-color 0.3s;
     }
     button:hover {
-      background-color: #e65c7b; /* Чуть темнее при наведении */
+      background-color: #e65c7b;
     }
     @media (min-width: 768px) {
       header img {
-        max-height: 200px; /* Логотип больше на ПК */
+        width: 50%; /* Уменьшаем ширину для больших экранов */
+        max-width: 500px; /* Еще больше на ПК */
       }
       button {
         font-size: 20px;
@@ -85,7 +86,7 @@
   <script>
     function showForm() {
       const formContainer = document.getElementById('formContainer');
-      formContainer.style.display = 'block'; // Показываем форму
+      formContainer.style.display = 'block';
     }
   </script>
 </body>
