@@ -175,19 +175,21 @@
 
     @media screen and (max-width: 768px) {
       header img {
-        width: 60%; /* Ещё большее увеличение логотипа на мобильных устройствах */
+        width: 75%; /* Ещё большее увеличение логотипа на мобильных устройствах */
       }
 
       section img {
         max-width: 100%; /* Картинки занимают всю ширину */
       }
 
-      .price-table {
-        width: 100%; /* Прайсы растягиваются на всю ширину */
+      .price-tables {
+        flex-direction: column; /* Размещаем элементы друг под другом */
+        align-items: center; /* Центрируем их */
       }
 
-      section .text-container p {
-        display: none; /* Скрыть лишний текст на мобильной версии */
+      .price-table {
+        width: 90%; /* Уменьшаем ширину для лучшего отображения на мобильных устройствах */
+        margin-bottom: 20px; /* Добавляем отступ между таблицами */
       }
 
       section .text-container p:first-child {
