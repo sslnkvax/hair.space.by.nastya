@@ -19,18 +19,18 @@
     }
     header {
       background-color: white;
-      padding: 20px 0;
+      padding: 40px 0; /* Увеличил отступы для логотипа */
       display: flex;
       justify-content: center;
       align-items: center;
     }
     header img {
-      width: 80%; /* Дефолтный размер для мобильных устройств */
-      max-width: 400px; /* Ограничение для крупных экранов */
+      width: 100%; /* Занимает всю ширину контейнера */
+      max-width: 600px; /* Ограничение на мобильных устройствах */
       height: auto;
     }
     main {
-      margin-top: 20px;
+      margin-top: 30px;
     }
     footer {
       background-color: var(--text-color);
@@ -50,8 +50,8 @@
       border: none;
       padding: 15px 30px;
       cursor: pointer;
-      font-size: 18px;
-      border-radius: 5px;
+      font-size: 18px; /* Прежний размер кнопки */
+      border-radius: 8px;
       transition: background-color 0.3s;
     }
     button:hover {
@@ -59,12 +59,7 @@
     }
     @media (min-width: 768px) {
       header img {
-        width: 50%; /* Уменьшаем ширину для больших экранов */
-        max-width: 500px; /* Еще больше на ПК */
-      }
-      button {
-        font-size: 20px;
-        padding: 20px 40px;
+        max-width: 800px; /* Сделал логотип больше на ПК */
       }
     }
   </style>
