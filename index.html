@@ -174,87 +174,72 @@
       text-decoration: underline;
     }
     
-    @media screen and (min-width: 375px) and (max-width: 430px) and (-webkit-device-pixel-ratio: 3) {
-    /* Стили для iPhone X - iPhone 16 */
-      .price-table {
-        width: 100%;
-        margin-bottom: 20px;
-    }
+    /* Для iPhone X - iPhone 16 и Android с высокой плотностью пикселей */
+@media screen and (min-width: 375px) and (max-width: 430px) and 
+       (-webkit-device-pixel-ratio: 3),
+       screen and (min-width: 375px) and (max-width: 430px) and 
+       (min-resolution: 288dpi) {
+  .price-table {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-      .price-tables {
-        flex-direction: column; /* Элементы располагаются вертикально */
-      }
+  .price-tables {
+    flex-direction: column; /* Элементы располагаются вертикально */
+  }
 
-      header img {
-        width: 60%; /* Увеличение логотипа */
-      }
-    }
+  header img {
+    width: 60%; /* Увеличение логотипа */
+  }
+}
 
+/* Для устройств с шириной экрана до 768px */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px; /* Уменьшение размера текста */
+  }
 
-    @media screen and (max-width: 768px) {
-      header img {
-        width: 75%; /* Ещё большее увеличение логотипа на мобильных устройствах */
-      }
+  header img {
+    width: 75%; /* Увеличение логотипа */
+  }
 
-      section img {
-        max-width: 100%; /* Картинки занимают всю ширину */
-      }
+  section img {
+    max-width: 100%; /* Картинки занимают всю ширину */
+  }
 
-      .price-tables {
-        display: flex; /* Включаем флексбокс */
-        flex-direction: row; /* Горизонтальное расположение (рядом) */
-        gap: 20px; /* Отступы между таблицами */
-        justify-content: center; /* Центрирование таблиц в контейнере */
-        flex-wrap: wrap; /* Позволяет переноситься на следующий ряд, если не помещаются */
-      }
+  .price-tables {
+    flex-direction: column; /* Размещаем элементы вертикально */
+    gap: 20px;
+  }
 
+  .price-table {
+    width: 90%; /* Растягиваем таблицы на всю ширину */
+    margin-bottom: 20px;
+  }
+}
 
-      .price-table {
-        width: 45%; /* Устанавливаем ширину, чтобы таблицы помещались рядом */
-        max-width: 400px; /* Ограничиваем максимальную ширину */
-        min-width: 300px; /* Минимальная ширина */
-        flex-grow: 1; /* Позволяет элементу заполнять оставшееся пространство */
-      }
+/* Для устройств с шириной экрана от 768px до 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    font-size: 16px; /* Увеличение текста для планшетов */
+  }
 
+  .price-tables {
+    flex-direction: row; /* Горизонтальное расположение */
+    gap: 10px;
+  }
 
+  .price-table {
+    width: 45%;
+  }
+}
 
-
-    /* Устройства с шириной экрана до 768px */
-    @media screen and (max-width: 768px) {
-      body {
-        font-size: 14px; /* Уменьшение размера текста */
-      }
-
-      .price-tables {
-        flex-direction: column;
-      }
-
-      .price-table {
-        width: 90%;
-      }
-    }
-
-    /* Устройства с шириной экрана от 768px до 1024px */
-    @media screen and (min-width: 768px) and (max-width: 1024px) {
-      body {
-        font-size: 16px; /* Увеличение текста для планшетов */
-    }
-
-     .price-tables {
-      flex-direction: row; /* Горизонтальное расположение */
-         gap: 10px;
-      }
-
-    .price-table {
-      width: 45%;
-    }
-    }
-
-    /* Высота экрана до 600px (например, для ландшафтных смартфонов) */
-    @media screen and (max-height: 600px) {
-    header {
-      padding: 20px 0; /* Уменьшение отступов */
-    } 
+/* Для экранов с высотой до 600px */
+@media screen and (max-height: 600px) {
+  header {
+    padding: 20px 0; /* Уменьшение отступов */
+  }
+}
 
   </style>
 </head>
