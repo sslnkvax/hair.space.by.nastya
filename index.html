@@ -521,6 +521,17 @@
     });
 
 
+    if (window.innerWidth <= 768) {
+      document.addEventListener("scroll", () => {
+        const background = document.body;
+        const scrollPosition = window.scrollY;
+
+      // Имитируем фиксированный фон
+      background.style.backgroundPosition = `center ${-scrollPosition / 2}px`;
+    });
+    }
+
+
   </script>
 </body>
 </html>
