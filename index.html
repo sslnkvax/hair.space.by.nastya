@@ -83,9 +83,14 @@
 
     section img {
       width: 30%;
-      max-width: 30%;
+      height: auto;
       border-radius: 100px;
       box-shadow: 0 0px 20px #ff6f91;
+      object-fit: cover;
+    }
+
+    .image-container img {
+      object-fit: cover; /* Либо contain, если важно полностью влезть */
     }
 
     section img:hover {
