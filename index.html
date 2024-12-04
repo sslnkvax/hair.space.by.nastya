@@ -499,7 +499,7 @@
 
   <!-- Форма для записи -->
   <div class="form-container" id="formContainer">
-    <form id="bookingForm" action="https://hair-space-by-nastya.onrender.com/send" method="POST">
+    <form id="bookingForm">
       <input type="text" name="name" placeholder="Ваше ім'я" required>
       <input type="tel" name="phone" placeholder="+380 00 000 0000" required>
       <button type="submit">записатись</button>
@@ -556,6 +556,31 @@
     }
 
   </script>
+
+  <script>
+  document.querySelector("#bookingForm").addEventListener("submit", async (event) => {
+    event.preventDefault(); // Останавливаем стандартное поведение формы
+
+    const name = document.querySelector('input[name="name"]').value;
+    const phone = document.querySelector('input[name="phone"]').value;
+
+    const response = await fetch("https://hair-space-by-nastya.onrender.com/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, phone }),
+    });
+
+    if (response.ok) {
+      alert("Заявка отправлена успешно!");
+      document.querySelector("#bookingForm").reset();
+    } else {
+      alert("Ошибка отправки. Попробуйте снова.");
+    }
+  });
+  </script>
+
 
 </body>
 </html>
