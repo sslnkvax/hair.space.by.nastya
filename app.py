@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import requests
 
 app = Flask(__name__)
 CORS(app)  # Это разрешает CORS для всех маршрутов
@@ -18,8 +19,8 @@ def send_to_telegram():
         return jsonify({"error": "Имя и телефон обязательны"}), 400
 
     # Telegram API
-    telegram_bot_token = "Ваш токен"
-    chat_id = "Ваш chat_id"
+    telegram_bot_token = "7870334293:AAELUDHPF44pyt7OXLW9OVK5TG-6QHvAeuA"  # Ваш токен
+    chat_id = "317963727"  # Ваш chat_id
     message = f"Новая заявка:\nИмя: {name}\nТелефон: {phone}"
 
     url = f"https://api.telegram.org/bot{telegram_bot_token}/sendMessage"
