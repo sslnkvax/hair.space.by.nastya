@@ -22,6 +22,19 @@
       color: var(--text-color);
     }
 
+    @media screen and (max-width: 768px) {
+      body {
+        font-family: 'Balsamiq Sans', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("images/1.jpg"); /* Единый фон для всего сайта */
+        background-size: cover; /* Растягиваем изображение */
+        background-position: center; /* Центрируем */
+        background-attachment: fixed; /* Фон фиксируется при прокрутке */
+        background-repeat: no-repeat; /* Отключаем повторение */
+        color: var(--text-color);
+      }
+    }
 
     header {
       padding: 50px 0;
@@ -89,7 +102,45 @@
       color: white
     }
 
+    @media screen and (max-width: 768px) {
+      section {
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+
+      section img {
+        max-width: 80%; /* Увеличить размер изображения для лучшего отображения */
+        margin-bottom: 0px !important;
+      }
+
+      section .text-container {
+        text-align: center; /* Оставить текст центрированным */
+        padding: 0px !important;
+      }
+
+      section .text-container h2 {
+        display: block; /* Заголовок всегда отображается */
+      }
+
+      section .text-container > p {
+        display: none; /* Скрыть только непосредственные <p> */
+      }
+
+      section .text-container > p:first-of-type {
+        display: block; /* Показать только первый непосредственный абзац */
+      }
+
+      section h2 {
+        font-size: 28px; /* Уменьшить заголовок для мобильных устройств */
+      }
+
+      section p {
+        font-size: 18px; /* Уменьшить текст для компактности */
+      }
+    }
+
     button.show-form {
+      font-family: 'Balsamiq Sans', sans-serif;
       position: fixed;
       bottom: 20px; /* Начальный отступ от нижнего края окна */
       left: 50%;
@@ -107,12 +158,14 @@
     }
 
     button.show-form:hover {
+      font-family: 'Balsamiq Sans', sans-serif;
       background-color: #e65c7b;
       opacity: 1;
     }
 
 
     .form-container {
+      font-family: 'Balsamiq Sans', sans-serif;
       display: none;
       position: fixed;
       bottom: 150px;
@@ -124,18 +177,21 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       z-index: 1001;
-      width: 90%;
+      width: 100%;
       max-width: 400px;
       opacity: 0.91;
+      margin: 0 auto;
     }
 
     .form-container form {
+      font-family: 'Balsamiq Sans', sans-serif;
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
 
     .form-container input {
+      font-family: 'Balsamiq Sans', sans-serif;
       width: 100%;
       padding: 10px;
       font-size: 16px;
@@ -144,6 +200,7 @@
     }
 
     .form-container button {
+      font-family: 'Balsamiq Sans', sans-serif;
       background-color: var(--main-color);
       color: white;
       border: none;
@@ -155,6 +212,7 @@
     }
 
     .form-container button:hover {
+      font-family: 'Balsamiq Sans', sans-serif;
       background-color: #e65c7b;
     }
 
@@ -173,25 +231,34 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    @media screen and (min-width: 375px) and (max-width: 430px) and 
+       (-webkit-device-pixel-ratio: 3),
+       screen and (min-width: 375px) and (max-width: 430px) and 
+       (min-resolution: 288dpi) {
+       .footer {
+          font-size: 20px;
+        }
+    }
     
     /* Для iPhone X - iPhone 16 и Android с высокой плотностью пикселей */
-@media screen and (min-width: 375px) and (max-width: 430px) and 
+  @media screen and (min-width: 375px) and (max-width: 430px) and 
        (-webkit-device-pixel-ratio: 3),
        screen and (min-width: 375px) and (max-width: 430px) and 
        (min-resolution: 288dpi) {
   .price-table {
-    width: 200%;
-    margin-bottom: 20px;
+    width: 90%;
+    margin-bottom: 0px;
   }
 
   .price-tables {
     display: flex;  
     flex-direction: column;
-    gap: 20px;
+    gap: 0px;
   }
 
   header img {
-    width: 95%; /* Увеличение логотипа */
+    width: 70%; /* Увеличение логотипа */
   }
 
 
@@ -241,6 +308,9 @@
   header {
     padding: 20px 0; /* Уменьшение отступов */
   }
+  header img {
+    width: 95%; /* Увеличение логотипа */
+  }
 }
 
   </style>
@@ -254,8 +324,7 @@
     <section>
       <div class="text-container">
         <h2>Студія відновлення та реконструкції волосся</h2>
-        <p>Якщо ви шукаєте якісні послуги по відновленню волосся, покращенню його зовнішнього</p>
-        <p>зовнішнього вигляду або змінам, що підкреслять вашу індивідуальність, ви потрапили за адресою!</p>
+        <p>Якщо ви шукаєте якісні послуги по відновленню волосся, покращенню його зовнішнього вигляду або змінам, що підкреслять вашу індивідуальність, ви потрапили за адресою!</p>
       </div>
     </section>
     <section class="image-left">
@@ -268,14 +337,14 @@
       </div>
     </section>
     <section class="image-right">
-      <img src="images/example2.jpg" alt="Image 2">
+      <img src="images/example3.jpg" alt="Image 2">
       <div class="text-container">
         <h2>Сучасні техніки</h2>
         <p>Використовую сучасні технології, щоб забезпечити найкращий результат для кожного клієнта.</p>
       </div>
     </section>
     <section class="image-left">
-      <img src="images/example3.jpg" alt="Image 3">
+      <img src="images/example2.jpg" alt="Image 3">
       <div class="text-container">
         <h2>Індивідуальний підхід</h2>
         <p>Кожен клієнт отримує унікальний підхід, що відповідає його стилю та бажанням.</p>
@@ -354,6 +423,22 @@
         font-size: 24px;
         margin-bottom: 20px;
       }
+
+    @media screen and (min-width: 375px) and (max-width: 430px) and 
+       (-webkit-device-pixel-ratio: 3),
+       screen and (min-width: 375px) and (max-width: 430px) and 
+       (min-resolution: 288dpi) {
+      .price-table {
+        width: 90%;
+        margin-bottom: 0px;
+      }
+
+      .price-tables {
+        display: flex;  
+        flex-direction: column;
+        gap: 10px;
+      }
+   }
     
       table {
         width: 100%;
@@ -418,7 +503,7 @@
       const viewportHeight = window.innerHeight; // Высота области просмотра
 
       if (footerTop < viewportHeight) {
-    // Если футер попадает в область видимости
+     // Если футер попадает в область видимости
       button.style.bottom = `${viewportHeight - footerTop + 20}px`; // Останавливаем кнопку за 20px до футера
       } else {
       button.style.bottom = "20px"; // Обычное фиксированное положение
