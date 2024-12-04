@@ -499,12 +499,13 @@
 
   <!-- Форма для записи -->
   <div class="form-container" id="formContainer">
-    <form action="/submit" method="POST">
+    <form id="bookingForm">
       <input type="text" name="name" placeholder="Ваше ім'я" required>
       <input type="tel" name="phone" placeholder="+380 00 000 0000" required>
       <button type="submit">записатись</button>
     </form>
   </div>
+
 
   <!-- Кнопка для открытия формы -->
   <h2><button class="show-form" id="bookingButton" onclick="toggleForm()">запис</button></h2>
@@ -554,7 +555,9 @@
     });
     }
 
-
   </script>
+
+  <script src="telegram.js"></script>
+
 </body>
 </html>
