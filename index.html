@@ -564,6 +564,9 @@
     const name = document.querySelector('input[name="name"]').value;
     const phone = document.querySelector('input[name="phone"]').value;
 
+    console.log("Name:", name);
+    console.log("Phone:", phone); // Выводим данные в консоль
+
     const response = await fetch("https://hair-space-by-nastya.onrender.com/send", {
       method: "POST",
       headers: {
