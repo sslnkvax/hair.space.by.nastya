@@ -446,6 +446,33 @@
 
   </style>
 
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+
+    // Инициализация режима согласия
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'granted',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted'
+    });
+
+     gtag('js', new Date());
+     gtag('config', 'AW-16808983289'); // Ваш идентификатор Google Ads
+  </script>
+
+  <script>
+    function updateConsent(adConsent, analyticsConsent) {
+       gtag('consent', 'update', {
+        'ad_storage': adConsent, // 'granted' или 'denied'
+        'analytics_storage': analyticsConsent // 'granted' или 'denied'
+       });
+    }
+  </script>
+
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -464,7 +491,7 @@
     "url": "https://hair-space-by-nastya.onrender.com",
     "areaServed": "Чернігів",
     "sameAs": [
-      "https://www.instagram.com/_nastyaa__aa"
+      "https://www.instagram.com/hair.space.by.nastya"
     ]
   }
   </script>
@@ -660,9 +687,10 @@
   <footer>
     <p>Телефон: <a href="tel:+380931392713">+380931392713</a></p>
     <p>Email: <a href="mailto:hair.space.by.nastya@gmail.com">hair.space.by.nastya@gmail.com</a></p>
-    <p>Соціальні мережі: <a href="https://www.instagram.com/_nastyaa__aa" target="_blank">Instagram</a></p>
+    <p>Соціальні мережі: <a href="https://www.instagram.com/hair.space.by.nastya" target="_blank">Instagram</a></p>
     <p>Адреса: <a href="https://maps.app.goo.gl/xTmUpNaqAXvfvgiz9">Чернігів, вул. Олега Міхнюка 41</a></p>
     <p>&copy; 2025 Hair Space by Nastya</p>
+    <button onclick="window.location.href='privacy-policy.html'" style="background-color: var(--main-color); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-family: 'Balsamiq Sans', sans-serif;">Політика конфіденційності</button>
   </footer>
 
   <script>
@@ -800,6 +828,52 @@ initializeCarousel();
       return false;
     }
   </script>
+
+<div id="consent-banner" style="display: none; position: fixed; bottom: 0; width: 100%; background: rgba(255, 111, 145, 0.7); color: white; box-shadow: 0 -2px 5px rgba(0,0,0,0.1); padding: 15px; z-index: 1000; font-family: 'Balsamiq Sans', sans-serif; backdrop-filter: blur(5px);">
+  <p style="margin: 0; padding: 0; font-size: 16px; text-align: center;">
+    Ми використовуємо файли cookies для покращення роботи сайту. Детальніше читайте у нашій <a href="/privacy-policy" target="_blank" style="color: white; text-decoration: underline;">Політиці конфіденційності</a>.
+  </p>
+  <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
+    <button id="accept-consent" style="padding: 10px 20px; background-color: white; color: var(--main-color); border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;">Прийняти</button>
+    <button id="reject-consent" style="padding: 10px 20px; background-color: white; color: var(--main-color); border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;">Відхилити</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const banner = document.getElementById("consent-banner");
+    const acceptBtn = document.getElementById("accept-consent");
+    const rejectBtn = document.getElementById("reject-consent");
+
+    // Показываем баннер, если согласие еще не дано
+    const consent = localStorage.getItem("userConsent");
+    if (!consent) {
+      banner.style.display = "block";
+    }
+
+    // Обработчик принятия согласия
+    acceptBtn.addEventListener("click", function () {
+      localStorage.setItem("userConsent", "granted");
+      updateConsent("granted", "granted"); // Обновляем состояние согласий в gtag
+      banner.style.display = "none";
+    });
+
+    // Обработчик отклонения согласия
+    rejectBtn.addEventListener("click", function () {
+      localStorage.setItem("userConsent", "denied");
+      updateConsent("denied", "denied"); // Обновляем состояние согласий в gtag
+      banner.style.display = "none";
+    });
+
+    // Функция обновления согласий через gtag
+    function updateConsent(adConsent, analyticsConsent) {
+      gtag("consent", "update", {
+        "ad_storage": adConsent,
+        "analytics_storage": analyticsConsent,
+      });
+    }
+  });
+</script>
 
 </body>
 </html>
