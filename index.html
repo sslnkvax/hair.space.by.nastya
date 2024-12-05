@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
+  <link rel="canonical" href="https://hair-space.info">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Кератинове вирівнювання волосся, ботокс і догляд за волоссям у Чернігові. Індивідуальний підхід та професійні послуги. Hair Space by Nastya.">
+  <meta name="keywords" content="кератин Чернігів, ботокс волосся Чернігів, догляд за волоссям, відновлення волосся Чернігів, Hair Space by Nastya">
+  <meta name="description" content="Кератиновое выпрямление волос, ботокс и уход за волосами в Чернигове. Индивидуальный подход и профессиональные услуги. Hair Space by Nastya.">
+  <meta name="keywords" content="кератин Чернигов, ботокс волос Чернигов, уход за волосами, восстановление волос Чернигов, Hair Space by Nastya">
+
   <title>Hair Space by Nastya</title>
   <style>
     :root {
@@ -110,6 +116,14 @@
       font-weight: 400;
     }
 
+    section h3 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: var(--main-color);
+      font-weight: 400;
+      text-align: center; /* Оставить текст центрированным */
+    }
+
     section p {
       font-size: 22px;
       line-height: 1.5;
@@ -148,6 +162,11 @@
       }
 
       section h2 {
+        font-size: 28px; /* Уменьшить заголовок для мобильных устройств */
+      }
+
+      section h3 {
+        text-align: center; /* Оставить текст центрированным */
         font-size: 28px; /* Уменьшить заголовок для мобильных устройств */
       }
 
@@ -294,6 +313,85 @@
     width: 70%; /* Увеличение логотипа */
   }
 
+  .carousel-container {
+  position: relative;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.carousel {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-images {
+  display: flex;
+  justify-content: center;
+  transition: transform 0.5s ease-in-out;
+  position: relative; /* Для позиционирования стрелок */
+}
+
+.carousel-item {
+  width: 33.33%;
+  height: auto;
+  object-fit: cover;
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+.carousel-item.prev,
+.carousel-item.next {
+  filter: blur(8px); /* Увеличиваем размытие для лучшего эффекта */
+  opacity: 0.5; /* Делаем боковые картинки менее заметными */
+  transform: scale(0.9); /* Уменьшаем боковые картинки немного */
+}
+
+.carousel-item.active {
+  filter: none;
+  opacity: 1;
+  transform: scale(1); /* Центральное изображение стандартного размера */
+}
+
+/* Позиционирование стрелочек */
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 3; /* Выше картинок */
+}
+
+.carousel-prev {
+  left: 5%;
+}
+
+.carousel-next {
+  right: 5%;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .carousel {
+    width: 100%;
+  }
+
+  .carousel-item {
+    width: 100%;
+  }
+
+  .carousel-prev,
+  .carousel-next {
+    font-size: 20px;
+  }
+}
+
 
 /* Для устройств с шириной экрана до 768px */
 @media screen and (max-width: 768px) {
@@ -347,6 +445,30 @@
 }
 
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Hair Space by Nastya",
+    "description": "Кератинове вирівнювання волосся, ботокс і догляд за волоссям у Чернігові. Індивідуальний підхід та професійні послуги.",
+    "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "вул. Олега Міхнюка 41",
+    "addressLocality": "Чернігів",
+    "postalCode": "14000",
+    "addressCountry": "UA"
+    },
+    "telephone": "+380931392713",
+    "email": "hair.space.by.nastya@gmail.com",
+    "url": "https://hair-space-by-nastya.onrender.com",
+    "areaServed": "Чернігів",
+    "sameAs": [
+      "https://www.instagram.com/_nastyaa__aa"
+    ]
+  }
+  </script>
+
 </head>
 <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400&display=swap" rel="stylesheet">
 <body>
@@ -357,7 +479,7 @@
     <section>
       <div class="text-container">
         <h2>Студія відновлення та реконструкції волосся</h2>
-        <p>Якщо ви шукаєте якісні послуги по відновленню волосся, покращенню його зовнішнього вигляду або змінам, що підкреслять вашу індивідуальність, ви потрапили за адресою!</p>
+        <p>Мрієте про здорове й доглянуте волосся? У Чернігові ми пропонуємо найкращі послуги для його відновлення та покращення!</p>
       </div>
     </section>
     <section class="image-left">
@@ -430,7 +552,22 @@
             </table>
           </div>
         </div>
-    
+    <section>
+      <div class="carousel-container">
+        <h3>До / Після</h3>
+        <div class="carousel">
+          <button class="carousel-prev">&#10094;</button>
+          <div class="carousel-images">
+            <img src="images/11.PNG" alt="До 1" class="carousel-item prev">
+            <img src="images/12.PNG" alt="До 2" class="carousel-item active">
+            <img src="images/13.PNG" alt="До 3" class="carousel-item next">
+          </div>
+          <button class="carousel-next">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+
     <style>
       .price-tables {
         display: flex;
@@ -583,6 +720,59 @@
     }
   });
   </script>
+
+  <script>
+let currentIndex = 0; // Индекс текущего активного изображения
+const totalImages = 11; // Всего 11 картинок (с 11.PNG по 21.PNG)
+const imagePaths = Array.from({ length: totalImages }, (_, i) => `images/${i + 11}.PNG`); // Пути к картинкам с 11.PNG по 21.PNG
+
+// Находим контейнер с изображениями
+const imagesContainer = document.querySelector('.carousel-images');
+
+// Создаем три изображения в DOM (prev, active, next)
+function initializeCarousel() {
+  for (let i = 0; i < 3; i++) {
+    const img = document.createElement('img');
+    img.classList.add('carousel-item');
+    imagesContainer.appendChild(img);
+  }
+  updateCarousel(); // Устанавливаем начальные значения
+}
+
+// Обновляем изображения и классы
+function updateCarousel() {
+  const prevIndex = (currentIndex - 1 + totalImages) % totalImages;
+  const nextIndex = (currentIndex + 1) % totalImages;
+
+  const images = imagesContainer.children;
+
+  // Назначаем пути к изображениям и классы
+  images[0].src = imagePaths[prevIndex];
+  images[0].className = 'carousel-item prev';
+
+  images[1].src = imagePaths[currentIndex];
+  images[1].className = 'carousel-item active';
+
+  images[2].src = imagePaths[nextIndex];
+  images[2].className = 'carousel-item next';
+}
+
+// Обработчик для левой стрелки
+document.querySelector('.carousel-prev').addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + totalImages) % totalImages; // Уменьшаем индекс
+  updateCarousel();
+});
+
+// Обработчик для правой стрелки
+document.querySelector('.carousel-next').addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % totalImages; // Увеличиваем индекс
+  updateCarousel();
+});
+
+// Инициализируем карусель
+initializeCarousel();
+</script>
+
 
 
 </body>
