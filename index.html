@@ -689,7 +689,7 @@
 
 
   <!-- Кнопка для открытия формы -->
-  <h2><button class="show-form" id="bookingButton" onclick="toggleForm()">запис</button></h2>
+  <h2><button class="show-form" id="bookingButton" onclick="toggleForm(); gtag_report_conversion();">запис</button></h2>
 
   <footer>
     <p>Телефон: <a href="tel:+380931392713">+380931392713</a></p>
@@ -791,8 +791,7 @@ document.querySelector('.carousel-next').addEventListener('click', () => {
 initializeCarousel();
 </script>
 
-<!-- Кнопка с отслеживанием конверсии -->
-  <button onclick="return gtag_report_conversion();">Запис</button>
+
 
   <!-- Скрипт для отслеживания -->
   <script>
