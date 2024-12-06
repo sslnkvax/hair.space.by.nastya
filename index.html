@@ -14,6 +14,23 @@
   <meta name="robots" content="noads">
   <title>Hair Space by Nastya</title>
 
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+
+    // Инициализация режима согласия
+    gtag('consent', 'default', {
+      'ad_storage': 'granted',
+      'analytics_storage': 'granted',
+      'functionality_storage': 'granted',
+      'personalization_storage': 'granted',
+      'security_storage': 'granted'
+    });
+
+     gtag('js', new Date());
+     gtag('config', 'AW-16808983289'); // Ваш идентификатор Google Ads
+  </script>
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16808983289"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -466,26 +483,10 @@
     function updateConsent(adConsent, analyticsConsent) {
        gtag('consent', 'update', {
         'ad_storage': adConsent, // 'granted'
+        'wait_for_update': 500,
         'analytics_storage': analyticsConsent // 'granted'
        });
     }
-  </script>
-
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-
-    // Инициализация режима согласия
-    gtag('consent', 'default', {
-      'ad_storage': 'granted',
-      'analytics_storage': 'granted',
-      'functionality_storage': 'granted',
-      'personalization_storage': 'granted',
-      'security_storage': 'granted'
-    });
-
-     gtag('js', new Date());
-     gtag('config', 'AW-16808983289'); // Ваш идентификатор Google Ads
   </script>
 
 
