@@ -460,6 +460,17 @@
 
   </style>
 
+  
+
+  <script>
+    function updateConsent(adConsent, analyticsConsent) {
+       gtag('consent', 'update', {
+        'ad_storage': adConsent, // 'granted'
+        'analytics_storage': analyticsConsent // 'granted'
+       });
+    }
+  </script>
+
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -475,15 +486,6 @@
 
      gtag('js', new Date());
      gtag('config', 'AW-16808983289'); // Ваш идентификатор Google Ads
-  </script>
-
-  <script>
-    function updateConsent(adConsent, analyticsConsent) {
-       gtag('consent', 'update', {
-        'ad_storage': adConsent, // 'granted'
-        'analytics_storage': analyticsConsent // 'granted'
-       });
-    }
   </script>
 
 
