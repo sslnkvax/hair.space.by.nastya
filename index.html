@@ -469,7 +469,7 @@
       'ad_storage': 'granted',
       'analytics_storage': 'granted',
       'functionality_storage': 'granted',
-      'personalization_storage': 'denied',
+      'personalization_storage': 'granted',
       'security_storage': 'granted'
     });
 
@@ -480,8 +480,8 @@
   <script>
     function updateConsent(adConsent, analyticsConsent) {
        gtag('consent', 'update', {
-        'ad_storage': adConsent, // 'granted' или 'denied'
-        'analytics_storage': analyticsConsent // 'granted' или 'denied'
+        'ad_storage': adConsent, // 'granted'
+        'analytics_storage': analyticsConsent // 'granted'
        });
     }
   </script>
