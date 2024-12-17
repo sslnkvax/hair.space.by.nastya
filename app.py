@@ -20,8 +20,8 @@ def send_to_telegram():
         return jsonify({"error": "Имя и телефон обязательны"}), 400
 
     # Telegram API
-    telegram_bot_token = os.environ.get("TELEGRAM_BOT_TOKEN", "YOUR_TELEGRAM_BOT_TOKEN")  # Используйте переменные окружения для безопасности
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID", "YOUR_CHAT_ID")  # Используйте переменные окружения для безопасности
+    telegram_bot_token = "7870334293:AAELUDHPF44pyt7OXLW9OVK5TG-6QHvAeuA"  # Ваш токен
+    chat_id = "317963727"  # Ваш chat_id
     message = f"Новая заявка:\nИмя: {name}\nТелефон: {phone}"
 
     url = f"https://api.telegram.org/bot{telegram_bot_token}/sendMessage"
@@ -37,5 +37,5 @@ def send_to_telegram():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # Получаем порт из переменной окружения
-    app.run(host="0.0.0.0", port=port)  # Запускаем Flask на всех интерфейсах и нужном порту
+    port = int(os.environ.get("PORT", 5000))  # Используем порт по умолчанию 5000
+    app.run(host="0.0.0.0", port=port)  # Запускаем Flask на всех интерфейсах и порту
