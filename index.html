@@ -51,7 +51,7 @@
       font-family: 'Balsamiq Sans', sans-serif;
       margin: 0;
       padding: 0;
-      background-image: url("images/1.jpg"); /* Единый фон для всего сайта */
+      background-image: url("{{ url_for('static', filename='images/1.jpg') }}");
       background-size: cover; /* Растягиваем изображение */
       background-position: center; /* Центрируем */
       background-attachment: fixed; /* Фон фиксируется при прокрутке */
@@ -75,7 +75,7 @@
         left: 0;    
         width: 100%;    
         height: 100%;    
-        background-image: url("images/1.jpg");
+        background-image: url("{{ url_for('static', filename='images/1.jpg') }}");
         background-position: center;    
         background-size: cover; 
         background-repeat: no-repeat;    
@@ -96,6 +96,14 @@
       max-width: 900px;
       height: auto;
     }
+
+    main, section {
+      max-width: 1200px; /* Ширина основного контейнера */
+      margin: 0 auto; /* Центрирование блока по горизонтали */
+      padding: 0 20px; /* Отступы по краям для более аккуратного отображения */
+      box-sizing: border-box; /* Учитывать padding в ширине */
+    }
+
 
     main {
       margin-top: 0px;
@@ -384,6 +392,7 @@
   transform: scale(1); /* Центральное изображение стандартного размера */
 }
 
+
 /* Позиционирование стрелочек */
 .carousel-prev,
 .carousel-next {
@@ -407,6 +416,39 @@
   right: 5%;
 }
 
+/* Новый стиль для стрелок */
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%; /* Центрирование по вертикали */
+  transform: translateY(-50%);
+  background-color: var(--main-color); /* Используем основной цвет сайта */
+  color: white;
+  border: none;
+  padding: 15px 25px; /* Увеличиваем размер кнопки */
+  font-size: 30px; /* Увеличиваем размер стрелок */
+  border-radius: 50%; /* Закругляем для создания круга */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 10; /* Поверх всех элементов */
+}
+
+.carousel-prev {
+  left: -60px; /* Изменяем положение слева от изображения */
+}
+
+.carousel-next {
+  right: -60px; /* Изменяем положение справа от изображения */
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background-color: #e65c7b; /* Темнее основной цвет при наведении */
+  transform: translateY(-50%) scale(1.1); /* Легкое увеличение при наведении */
+}
+
+
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
   .carousel {
@@ -422,6 +464,17 @@
     font-size: 20px;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .carousel-prev {
+    left: -80px; /* Позиция для больших экранов */
+  }
+  
+  .carousel-next {
+    right: -80px;
+  }
+}
+
 
 
 /* Для устройств с шириной экрана до 768px */
@@ -517,7 +570,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400&display=swap" rel="stylesheet">
 <body>
   <header>
-    <img src="logo.svg" alt="Hair Space by Nastya">
+    <img src="{{ url_for('static', filename='logo.svg') }}" alt="Hair Space by Nastya">
   </header>
   <main>
     <section>
@@ -527,7 +580,7 @@
       </div>
     </section>
     <section class="image-left">
-      <img src="images/example1.jpg" alt="Image 1">
+      <img src="{{ url_for('static', filename='images/example1.jpg') }}" alt="Image 1">
       <div class="text-container">
         <h2>Про мене</h2>
         <p>Мене звати Анастасія і я майстер з реконструкції та модифікації волосся з 2-річним досвідом.</p>
@@ -536,14 +589,14 @@
       </div>
     </section>
     <section class="image-right">
-      <img src="images/example3.jpg" alt="Image 2">
+      <img src="{{ url_for('static', filename='images/example3.jpg') }}" alt="Image 2">
       <div class="text-container">
         <h2>Сучасні техніки</h2>
         <p>Використовую сучасні технології, щоб забезпечити найкращий результат для кожного клієнта.</p>
       </div>
     </section>
     <section class="image-left">
-      <img src="images/example2.jpg" alt="Image 3">
+      <img src="{{ url_for('static', filename='images/example2.jpg') }}" alt="Image 3">
       <div class="text-container">
         <h2>Індивідуальний підхід</h2>
         <p>Кожен клієнт отримує унікальний підхід, що відповідає його стилю та бажанням.</p>
@@ -602,9 +655,9 @@
         <div class="carousel">
           <button class="carousel-prev">&#10094;</button>
           <div class="carousel-images">
-            <img src="images/11.PNG" alt="До 1" class="carousel-item prev">
-            <img src="images/12.PNG" alt="До 2" class="carousel-item active">
-            <img src="images/13.PNG" alt="До 3" class="carousel-item next">
+            <img src="{{ url_for('static', filename='images/11.PNG') }}" alt="До 1" class="carousel-item prev">
+            <img src="{{ url_for('static', filename='images/12.PNG') }}" alt="До 2" class="carousel-item active">
+            <img src="{{ url_for('static', filename='images/13.PNG') }}" alt="До 3" class="carousel-item next">
           </div>
           <button class="carousel-next">&#10095;</button>
         </div>
@@ -720,7 +773,7 @@
 
       if (footerTop < viewportHeight) {
      // Если футер попадает в область видимости
-      button.style.bottom = `${viewportHeight - footerTop + 20}px`; // Останавливаем кнопку за 20px до футера
+      button.style.bottom = ${viewportHeight - footerTop + 20}px; // Останавливаем кнопку за 20px до футера
       } else {
       button.style.bottom = "20px"; // Обычное фиксированное положение
       }
@@ -733,7 +786,7 @@
         const scrollPosition = window.scrollY;
 
       // Имитируем фиксированный фон
-      background.style.backgroundPosition = `center ${-scrollPosition / 2}px`;
+      background.style.backgroundPosition = center ${-scrollPosition / 2}px;
     });
     }
 
@@ -742,7 +795,7 @@
   <script>
 let currentIndex = 0; // Индекс текущего активного изображения
 const totalImages = 11; // Всего 11 картинок (с 11.PNG по 21.PNG)
-const imagePaths = Array.from({ length: totalImages }, (_, i) => `images/${i + 11}.PNG`); // Пути к картинкам с 11.PNG по 21.PNG
+const imagePaths = Array.from({ length: totalImages }, (_, i) => `static/images/${i + 11}.PNG`); // Пути к картинкам с 11.PNG по 21.PNG
 
 // Находим контейнер с изображениями
 const imagesContainer = document.querySelector('.carousel-images');
