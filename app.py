@@ -3,7 +3,7 @@ from flask_cors import CORS
 import requests
 
 app = Flask(__name__)
-CORS(app)  # Это разрешает CORS для всех маршрутов
+CORS(app, origins=["https://hair-space.info"])
 
 @app.route("/", methods=["GET"])
 def index():
