@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import requests
+import os  # Импортируем os для доступа к переменным окружения
 
 app = Flask(__name__)
 CORS(app, origins=["https://hair-space.info"])
@@ -36,5 +37,5 @@ def send_to_telegram():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
-
+    port = int(os.environ.get("PORT", 5000))  # Получаем порт из переменной окружения
+    app.run(host="0.0.0.0", port=port)  # Запускаем Flask на всех интерфейсах и нужном порту
