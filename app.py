@@ -1,14 +1,14 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import requests
-import os  # Импортируем os для доступа к переменным окружения
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', template_folder='templates')
 CORS(app, origins=["https://hair-space.info"])
 
 @app.route("/", methods=["GET"])
 def index():
-    return "Сервер работает!"
+    return render_template("index.html")
 
 @app.route("/send", methods=["POST"])
 def send_to_telegram():
@@ -20,8 +20,8 @@ def send_to_telegram():
         return jsonify({"error": "Имя и телефон обязательны"}), 400
 
     # Telegram API
-    telegram_bot_token = "7870334293:AAELUDHPF44pyt7OXLW9OVK5TG-6QHvAeuA"  # Ваш токен
-    chat_id = "317963727"  # Ваш chat_id
+    telegram_bot_token = os.environ.get("TELEGRAM_BOT_TOKEN", "YOUR_TELEGRAM_BOT_TOKEN")  # Используйте переменные окружения для безопасности
+    chat_id = os.environ.get("TELEGRAM_CHAT_ID", "YOUR_CHAT_ID")  # Используйте переменные окружения для безопасности
     message = f"Новая заявка:\nИмя: {name}\nТелефон: {phone}"
 
     url = f"https://api.telegram.org/bot{telegram_bot_token}/sendMessage"
