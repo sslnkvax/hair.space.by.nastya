@@ -1,45 +1,28 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
   <link rel="canonical" href="https://hair-space.info">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Кератинове вирівнювання волосся, ботокс і догляд за волоссям у Чернігові. Індивідуальний підхід та професійні послуги. Hair Space by Nastya.">
   <meta name="keywords" content="кератин Чернігів, ботокс волосся Чернігів, догляд за волоссям, відновлення волосся Чернігів, Hair Space by Nastya">
-  <meta name="description" content="Кератиновое выпрямление волос, ботокс и уход за волосами в Чернигове. Индивидуальный подход и профессиональные услуги. Hair Space by Nastya.">
-  <meta name="keywords" content="кератин Чернигов, ботокс волос Чернигов, уход за волосами, восстановление волос Чернигов, Hair Space by Nastya">
   <meta name="google" content="notranslate">
   <meta name="google" content="nositelinkssearchbox">
   <meta name="google" content="noimageindex">
   <meta name="robots" content="noads">
   <title>Hair Space by Nastya</title>
 
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-
-    // Инициализация режима согласия
-    gtag('consent', 'default', {
-      'ad_storage': 'granted',
-      'analytics_storage': 'granted',
-      'functionality_storage': 'granted',
-      'personalization_storage': 'granted',
-      'security_storage': 'granted'
-    });
-
-     gtag('js', new Date());
-     gtag('config', 'AW-16808983289'); // Ваш идентификатор Google Ads
-  </script>
-
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16808983289"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
-  
-    gtag('config', 'AW-16808983289');
+    gtag('config', 'AW-16808983289'); // Ваш идентификатор Google Ads
   </script>
-  
 
   <style>
     :root {
@@ -52,36 +35,31 @@
       margin: 0;
       padding: 0;
       background-image: url("{{ url_for('static', filename='images/1.jpg') }}");
-      background-size: cover; /* Растягиваем изображение */
-      background-position: center; /* Центрируем */
-      background-attachment: fixed; /* Фон фиксируется при прокрутке */
-      background-repeat: no-repeat; /* Отключаем повторение */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
       color: var(--text-color);
     }
 
     @media screen and (max-width: 768px) {
       body {
-        position: relative;
-        font-family: 'Balsamiq Sans', sans-serif;
-        margin: 0;
-        padding: 0;
         background: none;
       }
 
-      body::before {    
-        content: "";    
+      body::before {
+        content: "";
         position: fixed;
-        top: 0;    
-        left: 0;    
-        width: 100%;    
-        height: 100%;    
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         background-image: url("{{ url_for('static', filename='images/1.jpg') }}");
-        background-position: center;    
-        background-size: cover; 
-        background-repeat: no-repeat;    
-        z-index: -1; 
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -1;
       }
-
     }
 
     header {
@@ -98,32 +76,17 @@
     }
 
     main, section {
-      max-width: 1200px; /* Ширина основного контейнера */
-      margin: 0 auto; /* Центрирование блока по горизонтали */
-      padding: 0 20px; /* Отступы по краям для более аккуратного отображения */
-      box-sizing: border-box; /* Учитывать padding в ширине */
-    }
-
-
-    main {
-      margin-top: 0px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
     }
 
     section {
       display: flex;
       align-items: center;
-      padding: 0px 0px;
       gap: 10px 20px;
-      min-height: 0px;
-      padding: 50px 50px;
-    }
-
-    .image-left {
-      flex-direction: row; /* Картинка слева */
-    }
-
-    .image-right {
-      flex-direction: row-reverse; /* Картинка справа */
+      padding: 50px;
     }
 
     section img {
@@ -135,17 +98,9 @@
       object-fit: cover;
     }
 
-    .image-container img {
-      object-fit: contain; /* Либо contain, если важно полностью влезть */
-    }
-
-    section img:hover {
-      transform: scale(1); /* Увеличение изображения при наведении */
-    }
-
     section .text-container {
       flex: 1;
-      text-align: center; /* Центрирование текста */
+      text-align: center;
     }
 
     section h2 {
@@ -155,86 +110,18 @@
       font-weight: 400;
     }
 
-    section h3 {
-      font-size: 36px;
-      margin-bottom: 10px;
-      color: var(--main-color);
-      font-weight: 400;
-      text-align: center; /* Оставить текст центрированным */
-    }
-
     section p {
       font-size: 22px;
       line-height: 1.5;
       margin-bottom: 10px;
       font-weight: 400;
-      color: white
-    }
-
-    @media screen and (max-width: 768px) {
-      section {
-        flex-direction: column !important;
-        align-items: center !important;
-      }
-
-      section img {
-        max-height: 200px;
-        width: auto;
-        object-fit: contain;
-      }
-
-      section .text-container {
-        text-align: center; /* Оставить текст центрированным */
-        padding: 0px !important;
-      }
-
-      section .text-container h2 {
-        display: block; /* Заголовок всегда отображается */
-      }
-
-      section .text-container > p {
-        display: none; /* Скрыть только непосредственные <p> */
-      }
-
-      section .text-container > p:first-of-type {
-        display: block; /* Показать только первый непосредственный абзац */
-      }
-
-      section h2 {
-        font-size: 28px; /* Уменьшить заголовок для мобильных устройств */
-      }
-
-      section h3 {
-        text-align: center; /* Оставить текст центрированным */
-        font-size: 28px; /* Уменьшить заголовок для мобильных устройств */
-      }
-
-      section p {
-        font-size: 18px; /* Уменьшить текст для компактности */
-      }
-
-      .image-container {
-        position: relative;
-        width: 100%;
-        padding-top: 56.25%; /* Пропорция 16:9 */
-        overflow: hidden;
-      }
-
-      .image-container img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
+      color: white;
     }
 
     button.show-form {
       font-family: 'Balsamiq Sans', sans-serif;
       position: fixed;
-      bottom: 20px; /* Начальный отступ от нижнего края окна */
+      bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
       background-color: var(--main-color);
@@ -244,20 +131,17 @@
       cursor: pointer;
       font-size: 18px;
       border-radius: 8px;
-      transition: background-color 0.3s, bottom 0.3s; /* Плавный переход */
+      transition: background-color 0.3s;
       z-index: 1000;
       opacity: 0.7;
     }
 
     button.show-form:hover {
-      font-family: 'Balsamiq Sans', sans-serif;
       background-color: #e65c7b;
       opacity: 1;
     }
 
-
     .form-container {
-      font-family: 'Balsamiq Sans', sans-serif;
       display: none;
       position: fixed;
       bottom: 150px;
@@ -275,40 +159,13 @@
     }
 
     .form-container form {
-      font-family: 'Balsamiq Sans', sans-serif;
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
 
-    .form-container input {
-      font-family: 'Balsamiq Sans', sans-serif;
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-
-    .form-container button {
-      font-family: 'Balsamiq Sans', sans-serif;
-      background-color: var(--main-color);
-      color: white;
-      border: none;
-      padding: 15px;
-      cursor: pointer;
-      font-size: 16px;
-      border-radius: 8px;
-      transition: background-color 0.3s;
-    }
-
-    .form-container button:hover {
-      font-family: 'Balsamiq Sans', sans-serif;
-      background-color: #e65c7b;
-    }
-
     footer {
-      background-color: black(--text-color);
+      background-color: var(--text-color);
       color: white;
       padding: 10px;
       text-align: center;
@@ -322,256 +179,14 @@
     footer a:hover {
       text-decoration: underline;
     }
-
-    @media screen and (min-width: 375px) and (max-width: 430px) and 
-       (-webkit-device-pixel-ratio: 3),
-       screen and (min-width: 375px) and (max-width: 430px) and 
-       (min-resolution: 288dpi) {
-       .footer {
-          font-size: 20px;
-        }
-    }
-    
-    /* Для iPhone X - iPhone 16 и Android с высокой плотностью пикселей */
-    @media screen and (min-width: 375px) and (max-width: 430px) and 
-       (-webkit-device-pixel-ratio: 3),
-       screen and (min-width: 375px) and (max-width: 430px) and 
-       (min-resolution: 288dpi) {
-        .price-table {
-          width: 90%;
-          margin-bottom: 0px;
-        }
-
-  .price-tables {
-    display: flex;  
-    flex-direction: column;
-    gap: 0px;
-  }
-
-  header img {
-    width: 70%; /* Увеличение логотипа */
-  }
-
-  .carousel-container {
-  position: relative;
-  text-align: center;
-  margin-top: 50px;
-}
-
-.carousel {
-  position: relative;
-  width: 80%;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.carousel-images {
-  display: flex;
-  justify-content: center;
-  transition: transform 0.5s ease-in-out;
-  position: relative; /* Для позиционирования стрелок */
-}
-
-.carousel-item {
-  width: 33.33%;
-  height: auto;
-  object-fit: cover;
-  transition: opacity 0.5s ease, filter 0.5s ease;
-}
-
-.carousel-item.prev,
-.carousel-item.next {
-  filter: blur(8px); /* Увеличиваем размытие для лучшего эффекта */
-  opacity: 0.5; /* Делаем боковые картинки менее заметными */
-  transform: scale(0.9); /* Уменьшаем боковые картинки немного */
-}
-
-.carousel-item.active {
-  filter: none;
-  opacity: 1;
-  transform: scale(1); /* Центральное изображение стандартного размера */
-}
-
-
-/* Позиционирование стрелочек */
-.carousel-prev,
-.carousel-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 15px;
-  font-size: 25px;
-  cursor: pointer;
-  z-index: 3; /* Выше картинок */
-}
-
-.carousel-prev {
-  left: 5%;
-}
-
-.carousel-next {
-  right: 5%;
-}
-
-/* Новый стиль для стрелок */
-.carousel-prev,
-.carousel-next {
-  position: absolute;
-  top: 50%; /* Центрирование по вертикали */
-  transform: translateY(-50%);
-  background-color: var(--main-color); /* Используем основной цвет сайта */
-  color: white;
-  border: none;
-  padding: 15px 25px; /* Увеличиваем размер кнопки */
-  font-size: 30px; /* Увеличиваем размер стрелок */
-  border-radius: 50%; /* Закругляем для создания круга */
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 10; /* Поверх всех элементов */
-}
-
-.carousel-prev {
-  left: -60px; /* Изменяем положение слева от изображения */
-}
-
-.carousel-next {
-  right: -60px; /* Изменяем положение справа от изображения */
-}
-
-.carousel-prev:hover,
-.carousel-next:hover {
-  background-color: #e65c7b; /* Темнее основной цвет при наведении */
-  transform: translateY(-50%) scale(1.1); /* Легкое увеличение при наведении */
-}
-
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-  .carousel {
-    width: 100%;
-  }
-
-  .carousel-item {
-    width: 100%;
-  }
-
-  .carousel-prev,
-  .carousel-next {
-    font-size: 20px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .carousel-prev {
-    left: -80px; /* Позиция для больших экранов */
-  }
-  
-  .carousel-next {
-    right: -80px;
-  }
-}
-
-
-
-/* Для устройств с шириной экрана до 768px */
-@media screen and (max-width: 768px) {
-  body {
-    font-size: 14px; /* Уменьшение размера текста */
-  }
-
-  header img {
-    width: 95%; /* Увеличение логотипа */
-  }
-
-  section img {
-    max-width: 100%; /* Картинки занимают всю ширину */
-  }
-
-  .price-tables {
-    flex-direction: column; 
-    gap: 20px;
-  }
-
-  .price-table {
-    width: 90%; /* Растягиваем таблицы на всю ширину */
-    margin-bottom: 20px;
-  }
-}
-
-/* Для устройств с шириной экрана от 768px до 1024px */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  body {
-    font-size: 16px; /* Увеличение текста для планшетов */
-  }
-
-  .price-tables {
-    flex-direction: column; /* Горизонтальное расположение */
-    gap: 10px;
-  }
-
-  .price-table {
-    width: 45%;
-  }
-}
-
-/* Для экранов с высотой до 600px */
-@media screen and (max-height: 600px) {
-  header {
-    padding: 20px 0; /* Уменьшение отступов */
-  }
-  header img {
-    width: 95%; /* Увеличение логотипа */
-  }
-}
-
   </style>
-
-  
-
-  <script>
-    function updateConsent(adConsent, analyticsConsent) {
-       gtag('consent', 'update', {
-        'ad_storage': adConsent, // 'granted'
-        'wait_for_update': 500,
-        'analytics_storage': analyticsConsent // 'granted'
-       });
-    }
-  </script>
-
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BeautySalon",
-    "name": "Hair Space by Nastya",
-    "description": "Кератинове вирівнювання волосся, ботокс і догляд за волоссям у Чернігові. Індивідуальний підхід та професійні послуги.",
-    "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "вул. Олега Міхнюка 41",
-    "addressLocality": "Чернігів",
-    "postalCode": "14000",
-    "addressCountry": "UA"
-    },
-    "telephone": "+380931392713",
-    "email": "hair.space.by.nastya@gmail.com",
-    "url": "https://hair-space-by-nastya.onrender.com",
-    "areaServed": "Чернігів",
-    "sameAs": [
-      "https://www.instagram.com/hair.space.by.nastya"
-    ]
-  }
-  </script>
-
 </head>
-<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400&display=swap" rel="stylesheet">
+
 <body>
   <header>
     <img src="{{ url_for('static', filename='logo.svg') }}" alt="Hair Space by Nastya">
   </header>
+
   <main>
     <section>
       <div class="text-container">
@@ -579,15 +194,15 @@
         <p>Якщо ви шукаєте якісні послуги по відновленню та покращенню волосся у Чернігові - ви потрапили за адресою!</p>
       </div>
     </section>
+
     <section class="image-left">
       <img src="{{ url_for('static', filename='images/example1.jpg') }}" alt="Image 1">
       <div class="text-container">
         <h2>Про мене</h2>
         <p>Мене звати Анастасія і я майстер з реконструкції та модифікації волосся з 2-річним досвідом.</p>
-        <p>Моя мета — допомогти кожному клієнту досягти бажаного результату, відновити здоров’я волосся та подарувати йому нове життя.</p>
-        <p>Я використовую лише перевірені методи та високоякісні засоби для догляду, щоб забезпечити вам найкращий результат.</p>
       </div>
     </section>
+
     <section class="image-right">
       <img src="{{ url_for('static', filename='images/example3.jpg') }}" alt="Image 2">
       <div class="text-container">
@@ -595,6 +210,7 @@
         <p>Використовую сучасні технології, щоб забезпечити найкращий результат для кожного клієнта.</p>
       </div>
     </section>
+
     <section class="image-left">
       <img src="{{ url_for('static', filename='images/example2.jpg') }}" alt="Image 3">
       <div class="text-container">
@@ -602,53 +218,42 @@
         <p>Кожен клієнт отримує унікальний підхід, що відповідає його стилю та бажанням.</p>
       </div>
     </section>
-        <!-- Таблицы цен -->
-        <div class="price-tables">
-          <div class="price-table">
-            <h2>Кератин / Ботокс</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Довжина</th>
-                  <th>Ціна</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>30 см</td><td>1900 грн</td></tr>
-                <tr><td>35 см</td><td>2100 грн</td></tr>
-                <tr><td>40 см</td><td>2300 грн</td></tr>
-                <tr><td>45 см</td><td>2500 грн</td></tr>
-                <tr><td>50 см</td><td>2700 грн</td></tr>
-                <tr><td>55 см</td><td>2900 грн</td></tr>
-                <tr><td>60 см</td><td>3100 грн</td></tr>
-                <tr><td>65 см</td><td>3300 грн</td></tr>
-                <tr><td>70 см</td><td>3500 грн</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="price-table">
-            <h2>Холодне Відновлення</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Довжина</th>
-                  <th>Ціна</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>30 см</td><td>1300 грн</td></tr>
-                <tr><td>35 см</td><td>1400 грн</td></tr>
-                <tr><td>40 см</td><td>1500 грн</td></tr>
-                <tr><td>45 см</td><td>1600 грн</td></tr>
-                <tr><td>50 см</td><td>1700 грн</td></tr>
-                <tr><td>55 см</td><td>1800 грн</td></tr>
-                <tr><td>60 см</td><td>1900 грн</td></tr>
-                <tr><td>65 см</td><td>2000 грн</td></tr>
-                <tr><td>70 см</td><td>2100 грн</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+
+    <!-- Таблицы цен -->
+    <div class="price-tables">
+      <div class="price-table">
+        <h2>Кератин / Ботокс</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Довжина</th>
+              <th>Ціна</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>30 см</td><td>1900 грн</td></tr>
+            <tr><td>35 см</td><td>2100 грн</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="price-table">
+        <h2>Холодне Відновлення</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Довжина</th>
+              <th>Ціна</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>30 см</td><td>1300 грн</td></tr>
+            <tr><td>35 см</td><td>1400 грн</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <section>
       <div class="carousel-container">
         <h3>До / Після</h3>
@@ -664,85 +269,7 @@
       </div>
     </section>
 
-
-    <style>
-      .price-tables {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin: 50px 20px;
-        flex-wrap: wrap; /* Для адаптивности */
-      }
-    
-      .price-table {
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        width: 45%; /* Поддержка двух колонок */
-        max-width: 400px;
-        opacity: 0.6;
-      }
-    
-      .price-table h2 {
-        text-align: center;
-        color: var(--main-color);
-        font-size: 24px;
-        margin-bottom: 20px;
-      }
-
-    @media screen and (min-width: 375px) and (max-width: 430px) and 
-       (-webkit-device-pixel-ratio: 3),
-       screen and (min-width: 375px) and (max-width: 430px) and 
-       (min-resolution: 288dpi) {
-      .price-table {
-        width: 90%;
-        margin-bottom: 0px;
-      }
-
-      .price-tables {
-        display: flex;  
-        flex-direction: column;
-        gap: 10px;
-      }
-   }
-    
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 18px;
-      }
-    
-      table th, table td {
-        padding: 10px;
-        text-align: center;
-        border-bottom: 1px solid #ddd;
-      }
-    
-      table th {
-        background-color: var(--main-color);
-        color: white;
-      }
-    
-      table tr:last-child td {
-        border-bottom: none; /* Удаление последней линии */
-      }
-    </style>
-    
   </main>
-
-  <!-- Форма для записи -->
-  <div class="form-container" id="formContainer">
-    <form id="bookingForm">
-      <input type="text" name="name" placeholder="Ваше ім'я" required>
-      <input type="tel" name="phone" placeholder="+380 00 000 0000" required>
-      <button type="submit">записатись</button>
-    </form>
-  </div>
-
-
-  <!-- Кнопка для открытия формы -->
-  <h2><button class="show-form" id="bookingButton" onclick="toggleForm(); gtag_report_conversion();">запис</button></h2>
 
   <footer>
     <p>Телефон: <a href="tel:+380931392713">+380931392713</a></p>
@@ -753,188 +280,6 @@
     <button onclick="window.location.href='privacy-policy.html'" style="background-color: var(--main-color); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-family: 'Balsamiq Sans', sans-serif;">Політика конфіденційності</button>
   </footer>
 
-  <script>
-    // Показать/скрыть форму
-    function toggleForm() {
-      const formContainer = document.getElementById('formContainer');
-      if (formContainer.style.display === 'none' || formContainer.style.display === '') {
-        formContainer.style.display = 'block';
-      } else {
-        formContainer.style.display = 'none';
-      }
-    }
-
-    document.addEventListener("scroll", function () {
-      const button = document.getElementById("bookingButton");
-      const footer = document.querySelector("footer");
-
-      const footerTop = footer.getBoundingClientRect().top; // Верхняя часть футера
-      const viewportHeight = window.innerHeight; // Высота области просмотра
-
-      if (footerTop < viewportHeight) {
-     // Если футер попадает в область видимости
-      button.style.bottom = ${viewportHeight - footerTop + 20}px; // Останавливаем кнопку за 20px до футера
-      } else {
-      button.style.bottom = "20px"; // Обычное фиксированное положение
-      }
-    });
-
-
-    if (window.innerWidth <= 768) {
-      document.addEventListener("scroll", () => {
-        const background = document.body;
-        const scrollPosition = window.scrollY;
-
-      // Имитируем фиксированный фон
-      background.style.backgroundPosition = center ${-scrollPosition / 2}px;
-    });
-    }
-
-  </script>
-
-  <script>
-let currentIndex = 0; // Индекс текущего активного изображения
-const totalImages = 11; // Всего 11 картинок (с 11.PNG по 21.PNG)
-const imagePaths = Array.from({ length: totalImages }, (_, i) => `static/images/${i + 11}.PNG`); // Пути к картинкам с 11.PNG по 21.PNG
-
-// Находим контейнер с изображениями
-const imagesContainer = document.querySelector('.carousel-images');
-
-// Создаем три изображения в DOM (prev, active, next)
-function initializeCarousel() {
-  for (let i = 0; i < 3; i++) {
-    const img = document.createElement('img');
-    img.classList.add('carousel-item');
-    imagesContainer.appendChild(img);
-  }
-  updateCarousel(); // Устанавливаем начальные значения
-}
-
-// Обновляем изображения и классы
-function updateCarousel() {
-  const prevIndex = (currentIndex - 1 + totalImages) % totalImages;
-  const nextIndex = (currentIndex + 1) % totalImages;
-
-  const images = imagesContainer.children;
-
-  // Назначаем пути к изображениям и классы
-  images[0].src = imagePaths[prevIndex];
-  images[0].className = 'carousel-item prev';
-
-  images[1].src = imagePaths[currentIndex];
-  images[1].className = 'carousel-item active';
-
-  images[2].src = imagePaths[nextIndex];
-  images[2].className = 'carousel-item next';
-}
-
-// Обработчик для левой стрелки
-document.querySelector('.carousel-prev').addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + totalImages) % totalImages; // Уменьшаем индекс
-  updateCarousel();
-});
-
-// Обработчик для правой стрелки
-document.querySelector('.carousel-next').addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % totalImages; // Увеличиваем индекс
-  updateCarousel();
-});
-
-// Инициализируем карусель
-initializeCarousel();
-</script>
-
-
-
-  <!-- Скрипт для отслеживания -->
-  <script>
-    function gtag_report_conversion() {
-      gtag('event', 'conversion', {
-        'send_to': 'AW-16808983289/xGa4CNLuqfMZEPn1ks8-' // Ваш Conversion Label
-      });
-      return false;
-    }
-  </script>
-
-<div id="consent-banner" style="display: none; position: fixed; bottom: 0; width: 100%; background: rgba(255, 111, 145, 0.7); color: white; box-shadow: 0 -2px 5px rgba(0,0,0,0.1); padding: 15px; z-index: 1000; font-family: 'Balsamiq Sans', sans-serif; backdrop-filter: blur(5px);">
-  <p style="margin: 0; padding: 0; font-size: 16px; text-align: center;">
-    Ми використовуємо файли cookies для покращення роботи сайту. Детальніше читайте у нашій <a href="/privacy-policy" target="_blank" style="color: white; text-decoration: underline;">Політиці конфіденційності</a>.
-  </p>
-  <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
-    <button id="accept-consent" style="padding: 10px 20px; background-color: white; color: var(--main-color); border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;">Прийняти</button>
-    <button id="reject-consent" style="padding: 10px 20px; background-color: white; color: var(--main-color); border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;">Відхилити</button>
-  </div>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const banner = document.getElementById("consent-banner");
-    const acceptBtn = document.getElementById("accept-consent");
-    const rejectBtn = document.getElementById("reject-consent");
-
-    // Показываем баннер, если согласие еще не дано
-    const consent = localStorage.getItem("userConsent");
-    if (!consent) {
-      banner.style.display = "block";
-    }
-
-    // Обработчик принятия согласия
-    acceptBtn.addEventListener("click", function () {
-      localStorage.setItem("userConsent", "granted");
-      updateConsent("granted", "granted"); // Обновляем состояние согласий в gtag
-      banner.style.display = "none";
-    });
-
-    // Обработчик отклонения согласия
-    rejectBtn.addEventListener("click", function () {
-      localStorage.setItem("userConsent", "denied");
-      updateConsent("denied", "denied"); // Обновляем состояние согласий в gtag
-      banner.style.display = "none";
-    });
-
-    // Функция обновления согласий через gtag
-    function updateConsent(adConsent, analyticsConsent) {
-      gtag("consent", "update", {
-        "ad_storage": adConsent,
-        "analytics_storage": analyticsConsent,
-      });
-    }
-  });
-</script>
-
-<script>
-  document.querySelector("#bookingForm").addEventListener("submit", async (event) => {
-    event.preventDefault(); // Останавливаем стандартное поведение формы
-
-    const name = document.querySelector('input[name="name"]').value;
-    const phone = document.querySelector('input[name="phone"]').value;
-
-    console.log("Name:", name);
-    console.log("Phone:", phone); // Выводим данные в консоль
-
-    // Отправка конверсии в Google Ads
-    gtag('event', 'conversion', {
-      'send_to': 'AW-16808983289/IZm4CJf7qvMZEPn1ks8-'
-    });
-
-    // Отправка данных на сервер
-    const response = await fetch("https://hair-space-by-nastya.onrender.com/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, phone }),
-    });
-
-    if (response.ok) {
-      alert("Заявка отправлена успешно!");
-      document.querySelector("#bookingForm").reset();
-    } else {
-      alert("Ошибка отправки. Попробуйте снова.");
-    }
-  });
-</script>
-
-
 </body>
+
 </html>
