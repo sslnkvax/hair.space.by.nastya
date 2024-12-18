@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, send_from_directory
 from flask_cors import CORS
 import requests
 import os
@@ -9,6 +9,16 @@ CORS(app, origins=["https://hair-space.info"])
 @app.route("/", methods=["GET"])
 def index():
     return render_template("index.html")
+
+# Маршрут для robots.txt
+@app.route("/robots.txt")
+def robots_txt():
+    return send_from_directory(app.static_folder, "robots.txt")
+
+# Маршрут для sitemap.xml
+@app.route("/sitemap.xml")
+def sitemap_xml():
+    return send_from_directory(app.static_folder, "sitemap.xml")
 
 @app.route("/send", methods=["POST"])
 def send_to_telegram():
