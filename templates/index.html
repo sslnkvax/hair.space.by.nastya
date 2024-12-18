@@ -13,7 +13,7 @@
   <meta name="google" content="noimageindex">
   <meta name="robots" content="noads">
   <title>Hair Space by Nastya</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 
   <script>
@@ -734,9 +734,6 @@
       document.addEventListener("scroll", () => {
         const background = document.body;
         const scrollPosition = window.scrollY;
-
-      // Имитируем фиксированный фон
-      //background.style.backgroundPosition = `center ${-scrollPosition / 2}px`;
     });
     }
 
